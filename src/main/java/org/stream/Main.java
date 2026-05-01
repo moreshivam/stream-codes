@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Hello world!");
+        System.out.println ("Hello world!");
 
         List<Integer> list = List.of(1,2,3,4,5,6,7,8,9,10);
 
