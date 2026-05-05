@@ -10,7 +10,7 @@ public class Main {
 
         System.out.println ("Hello world!");
 
-        List<Integer> list = List.of(1,2,3,4,5,6,7,8,9,10);
+        List<Integer> list = List.of(1,2,3,4,5,6,7,8, 8,9,10 ,1,1,1,9,10);
 
        //find all even numbers
         List<Integer> ans = list.stream()
@@ -111,6 +111,43 @@ public class Main {
         map.entrySet()
                 .stream()
                .forEach(entry -> System.out.println(entry.getKey() + " : " + entry.getValue()));
+
+
+        //remove duplicates from a list
+        List<Integer> ans10 = list.stream()
+                .distinct()
+                .toList();
+
+        System.out.println(ans10);
+
+        // sort list of decimal in reverse order
+        List<Double> decimals = Arrays.asList(1.25, 0.5, 3.75, 2.1, 0.99);
+
+        List<Double> ans11 = decimals.stream()
+                .sorted(Comparator.reverseOrder())
+                .toList();
+
+        System.out.println(ans11);
+
+        // multiples of 5
+        List<Integer> ans12 = list.stream()
+                .filter(n -> n%5 ==0)
+                .toList();
+
+        System.out.println(ans12);
+
+        int max = list.stream()
+                .max(Integer::compareTo)
+                .orElse(-1);
+
+        int min = list.stream()
+                .min(Integer::compareTo)
+                .orElse(-1);
+
+        System.out.println("max: " + max);
+        System.out.println("min: " + min);
+
+
     }
 }
 
